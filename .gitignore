@@ -1,54 +1,155 @@
-# http://www.gnu.org/software/automake
+# ============================================================
+# CHEAT CLIP — .gitignore
+# ============================================================
 
-Makefile.in
-/ar-lib
-/mdate-sh
-/py-compile
-/test-driver
-/ylwrap
-.deps/
-.dirstamp
+# ─── SECRETS & ENVIRONMENT ───────────────────────────────────
+.env
+.env.*
+!.env.template
+!.env.example
 
-# http://www.gnu.org/software/autoconf
+# ─── NODE / FRONTEND ─────────────────────────────────────────
+node_modules/
+dist/
+dist-ssr/
+*.local
 
-autom4te.cache
-/autoscan.log
-/autoscan-*.log
-/aclocal.m4
-/compile
-/config.cache
-/config.guess
-/config.h.in
-/config.log
-/config.status
-/config.sub
-/configure
-/configure.scan
-/depcomp
-/install-sh
-/missing
-/stamp-h1
+# Build artifacts
+.vite/
+.cache/
 
-# https://www.gnu.org/software/libtool/
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-/libtool
-/ltmain.sh
-.libs/
+# ─── PYTHON / BACKEND ────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.pyc
 
-# http://www.gnu.org/software/texinfo
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
 
-/texinfo.tex
+# ─── SENSITIVE CREDENTIALS & COOKIES ──────────────────────────
+cookies.txt
+*cookies*.txt
+backend/cookies.txt
+*.cookies
 
-# http://www.gnu.org/software/m4/
+# Temp downloads and exports
+backend/temp/
+backend/temp_downloads/
+backend/temp_clips/
+backend/exports/
+*.ass
+*.mp4
+*.m4a
+*.webm
+*.mkv
 
-m4/libtool.m4
-m4/ltoptions.m4
-m4/ltsugar.m4
-m4/ltversion.m4
-m4/lt~obsolete.m4
 
-# Generated Makefile
-# (meta build system like autotools,
-# can automatically generate from config.status script
-# (which is called by configure script))
-Makefile
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+*.egg
+MANIFEST
+
+# Unit test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+
+# mypy / pyright
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyright/
+
+# ─── SCRATCH / TEMP FILES ────────────────────────────────────
+scratch/
+*.tmp
+*.temp
+*.bak
+
+# ─── EDITOR / IDE ────────────────────────────────────────────
+# VS Code (allow sharing extensions recommendations)
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Vim / Neovim
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+Session.vim
+.netrwhist
+tags
+
+# ─── OPERATING SYSTEM ────────────────────────────────────────
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+
+# ─── MISC ────────────────────────────────────────────────────
+*.pem
+*.key
+*.p12
+*.pfx
